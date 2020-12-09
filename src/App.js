@@ -8,7 +8,7 @@ function App() {
         <h1>Weather App</h1>
         <Weather />
         <footer>
-          <a href="https://github.com/maria-ribeiro/react-weather-app" target="_blank"><i class="fa fa-github"></i></a>
+          <a href="https://github.com/maria-ribeiro/react-weather-app" target="_blank" rel="noreferrer"><i class="fa fa-github"></i></a>
         </footer>
       </div>
     </div>
