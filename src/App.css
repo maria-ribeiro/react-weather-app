@@ -1,4 +1,12 @@
-footer .fa-github {
+.App footer {
   font-size: 42px;
   text-align: center;
+}
+
+.App footer .fa-github {
+  color: white;
+}
+
+.App .container {
+  width: 100vw;
 }
