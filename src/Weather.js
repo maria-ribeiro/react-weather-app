@@ -15,7 +15,7 @@ function Weather(){
           </h2>
           <p>Snow</p>
         </div>
-        <div className="col-6 weather-description">
+        <div className="col-6 descriptive">
           <p>
             Lisbon, PT <br/>
             Wed, Dec 9 2020
@@ -38,9 +38,9 @@ function Weather(){
           </div>
         </div>
       </div>
-
-
-
+      <div className="row forecast descriptive">
+          Forecast
+      </div>
     </div>
   );
 }
