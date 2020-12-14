@@ -5,7 +5,7 @@ function App() {
   return (
     <div className="App">
       <div className="container">
-        <h1>Weather App</h1>
+        <h2>Weather App</h2>
         <Weather />
         <footer>
           <a href="https://github.com/maria-ribeiro/react-weather-app" target="_blank" rel="noreferrer"><i class="fa fa-github"></i></a>

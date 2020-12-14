@@ -10,35 +10,51 @@ function Weather(){
       <div className="row align-items-center outter-row">
         <div className="col-6 weather-main">
           <i class="far fa-snowflake"></i>
-          <h2>
+          <h1>
             22°C
-          </h2>
+          </h1>
           <p>Snow</p>
         </div>
-        <div className="col-6 descriptive">
+        <div className="col-6 description light-background">  
+          <h3>Lisbon, PT</h3>
           <p>
-            Lisbon, PT <br/>
-            Wed, Dec 9 2020
+            Wed, Dec 9 2020, 14:32
           </p>
-          <div className="row">
-            <div className="col-6">
-              <ul>
-                <li>Maximum 23</li>
-                <li>Humidity 63%</li>
-                <li>Sunrise 08:02</li>
-              </ul>
+          <div className="row justify-content-around">
+            <div className="col col-lg-3">
+              <div className="weather-card">
+                <h3><strong>23°C</strong></h3>
+                <p>maximum</p>
+              </div>
+              <div className="weather-card bottom">
+                <h3><strong>12°C</strong></h3>
+                <p>minimum</p>
+              </div>
             </div>
-            <div className="col-6">
-              <ul>
-                <li>Minimum 15</li>
-                <li>Wind 4km/h</li>
-                <li>Sunset 18:21</li>
-              </ul>
+            <div className="col col-lg-3">
+              <div className="weather-card">
+                <h3><strong>4km/h</strong></h3>
+                <p>wind speed</p>
+              </div>
+              <div className="weather-card bottom">
+                <h3><strong>33%</strong></h3>
+                <p>humidity</p>
+              </div>
+            </div>
+            <div className="col col-lg-3">
+              <div className="weather-card">
+                <h3><strong>08:33</strong></h3>
+                <p>sunrise</p>
+              </div>
+              <div className="weather-card bottom">
+                <h3><strong>18:47</strong></h3>
+                <p>sunset</p>
+              </div>
             </div>
           </div>
         </div>
       </div>
-      <div className="row forecast descriptive">
+      <div className="row forecast light-background">
           Forecast
       </div>
     </div>
