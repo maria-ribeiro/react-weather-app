@@ -4,7 +4,6 @@
   align-items: center;
   justify-content: space-evenly;
   min-height: 600px;
-  border: 1px solid red;
 }
 
 .Weather h3 {
@@ -28,6 +27,14 @@
   margin-bottom: 20px;
 }
 
+.Weather .weather-main .unit {
+  font-size: 20px;
+  position: relative;
+  line-height: 1;
+  top: -15px;
+  margin-left: 5px;
+}
+
 .Weather .light-background {
   background: rgba(255, 255, 255, 0.5);
   border-radius: 10px;
@@ -36,6 +43,7 @@
 
 .Weather .description {
   padding: 30px;
+  color: #a84704;
 }
 
 .Weather .description ul {
@@ -43,12 +51,16 @@
   padding: 0;
 }
 
-.Weather .weather-card {
-  text-align: center;
-}
-
 .Weather .weather-card.bottom p {
   margin: 0;
+}
+
+.Weather .weather-card .unit {
+  font-size: 14px;
+  position: relative;
+  line-height: 1;
+  top: -8px;
+  margin-left: 5px;
 }
 
 .Weather .forecast {

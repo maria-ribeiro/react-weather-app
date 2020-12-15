@@ -5,13 +5,19 @@ function Weather(){
   return(
     <div className="Weather">
       <form>
-        <input class="form-control mr-sm-2" type="search" placeholder="Search" />
+        <input class="form-control mr-sm-2"
+               type="search"
+               placeholder="Search"
+               autoFocus="on" />
       </form>
       <div className="row align-items-center outter-row">
         <div className="col-6 weather-main">
           <i class="far fa-snowflake"></i>
           <h1>
-            22°C
+            <strong>
+            22
+            <span className="unit">°C | °F</span>
+            </strong>
           </h1>
           <p>Snow</p>
         </div>
@@ -23,21 +29,33 @@ function Weather(){
           <div className="row justify-content-around">
             <div className="col col-lg-3">
               <div className="weather-card">
-                <h3><strong>23°C</strong></h3>
+                <h3>
+                  <strong>23
+                  <span className="unit">°C</span></strong>
+                </h3>
                 <p>maximum</p>
               </div>
               <div className="weather-card bottom">
-                <h3><strong>12°C</strong></h3>
+                <h3>
+                  <strong>12
+                  <span className="unit">°C</span></strong>
+                </h3>
                 <p>minimum</p>
               </div>
             </div>
             <div className="col col-lg-3">
               <div className="weather-card">
-                <h3><strong>4km/h</strong></h3>
+                <h3>
+                  <strong>4
+                  <span className="unit">km/h</span></strong>
+                </h3>
                 <p>wind speed</p>
               </div>
               <div className="weather-card bottom">
-                <h3><strong>33%</strong></h3>
+                <h3>
+                  <strong>33
+                  <span className="unit">%</span></strong>
+                </h3>
                 <p>humidity</p>
               </div>
             </div>
