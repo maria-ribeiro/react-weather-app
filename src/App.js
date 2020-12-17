@@ -6,9 +6,9 @@ function App() {
     <div className="App">
       <div className="container">
         <h2>Weather App</h2>
-        <Weather />
+        <Weather defaultCity="Lisbon"/>
         <footer>
-          <a href="https://github.com/maria-ribeiro/react-weather-app" target="_blank" rel="noreferrer"><i class="fa fa-github"></i></a>
+          <a href="https://github.com/maria-ribeiro/react-weather-app" target="_blank" rel="noreferrer"><i className="fa fa-github"></i></a>
         </footer>
       </div>
     </div>
