@@ -1,16 +1,10 @@
 import React, { useState } from "react";
+import FormattedDate from "./FormattedDate"
 import axios from "axios";
 import "./Weather.css";
 
 function Weather(props){
   const [weather, setWeather] = useState({ready: false});
-  function convertUnix(timestamp){
-    let date = new Date(timestamp * 1000);
-    let hours = date.getHours();
-    let minutes = "0" + date.getMinutes();
-    return hours + ':' + minutes.substr(-2);
-  }
-
   function handleResponse(response){
     console.log(response.data);
     setWeather({
@@ -18,13 +12,13 @@ function Weather(props){
       description: response.data.weather[0].description,
       city: response.data.name,
       country: response.data.sys.country,
-      date: "Wed, Dec 9 2020, 14:32",
+      date: new Date(response.data.dt * 1000),
       maximum: Math.round(response.data.main.temp_max),
       minimum: Math.round(response.data.main.temp_min),
       wind: Math.round(response.data.wind.speed),
       humidity: response.data.main.humidity,
-      sunrise: convertUnix(response.data.sys.sunrise),
-      sunset: convertUnix(response.data.sys.sunset),
+      sunrise: new Date(response.data.sys.sunrise * 1000),
+      sunset: new Date(response.data.sys.sunset * 1000),
       ready: true
     });
   }
@@ -52,7 +46,7 @@ function Weather(props){
           <div className="col-6 description light-background">  
             <h3>{weather.city}, {weather.country}</h3>
             <p>
-              {weather.date}
+              <FormattedDate date={weather.date}/>
             </p>
             <div className="row justify-content-around">
               <div className="col col-lg-3">
@@ -89,11 +83,11 @@ function Weather(props){
               </div>
               <div className="col col-lg-3">
                 <div className="weather-card">
-                  <h3><strong>{weather.sunrise}</strong></h3>
+                  <h3><strong>{("0" + weather.sunrise.getHours()).substr(-2)}:{("0" + weather.sunrise.getMinutes()).substr(-2)}</strong></h3>
                   <p>sunrise</p>
                 </div>
                 <div className="weather-card bottom">
-                  <h3><strong>{weather.sunset}</strong></h3>
+                  <h3><strong>{("0" + weather.sunset.getHours()).substr(-2)}:{("0" + weather.sunset.getMinutes()).substr(-2)}</strong></h3>
                   <p>sunset</p>
                 </div>
               </div>
