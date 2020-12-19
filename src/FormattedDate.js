@@ -9,5 +9,5 @@ export default function FormattedDate(props){
     let month = props.date.getMonth();
     let hours = props.date.getHours();
     let minutes = props.date.getMinutes();
-    return <div>{days[day]}, {months[month]} {date} {year}, {("0" + hours).substr(-2)}:{("0" + minutes).substr(-2)}</div>
+    return <p>{days[day]}, {months[month]} {date} {year}, {("0" + hours).substr(-2)}:{("0" + minutes).substr(-2)}</p>
 }

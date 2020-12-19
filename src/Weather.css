@@ -14,20 +14,26 @@
   border-radius: 4px;
 }
 
-.Weather .outter-row {
+.Weather .light-background {
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.Weather .WeatherInfo {
   width: 100%;
 }
 
-.Weather .weather-main {
+.Weather .WeatherInfo .weather-main {
   text-align: center;
 }
 
-.Weather .weather-main .fa-snowflake {
+.Weather .WeatherInfo .weather-main .fa-snowflake {
   font-size: 80px;
   margin-bottom: 20px;
 }
 
-.Weather .weather-main .unit {
+.Weather .WeatherInfo .weather-main .unit {
   font-size: 20px;
   position: relative;
   line-height: 1;
@@ -35,27 +41,17 @@
   margin-left: 5px;
 }
 
-.Weather .light-background {
-  background: rgba(255, 255, 255, 0.5);
-  border-radius: 10px;
-  padding: 10px;
-}
-
-.Weather .description {
+.Weather .WeatherInfo .description {
   padding: 30px;
   color: #a84704;
 }
 
-.Weather .description ul {
+.Weather .WeatherInfo .description ul {
   list-style-type: none;
   padding: 0;
 }
 
-.Weather .weather-card.bottom p {
-  margin: 0;
-}
-
-.Weather .weather-card .unit {
+.Weather .WeatherInfo .InfoCard .unit {
   font-size: 14px;
   position: relative;
   line-height: 1;
@@ -63,7 +59,7 @@
   margin-left: 5px;
 }
 
-.Weather .forecast {
+.Weather .Forecast {
   width: 100%;
   height: 180px;
 }
