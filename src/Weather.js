@@ -6,7 +6,9 @@ import "./Weather.css";
 
 function Weather(){
   const [weather, setWeather] = useState({ready: false});
+  const [forecast, setForecast] = useState({ready: false});
   const [city, setCity] = useState("");
+
   function handleResponse(response){
     setWeather({
       temperature: Math.round(response.data.main.temp),
@@ -25,10 +27,19 @@ function Weather(){
     });
   }
 
+  function handleForecastResponse(response) {
+    setForecast({
+      list: response.data.list,
+      ready: true
+    });
+  }
+
   function search() {
     const apiKey = "cef6ae7836ecd17a2e06e0819975713e";
     let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKey}`;
     axios.get(apiUrl).then(handleResponse);
+    let apiForecastUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&units=metric&appid=${apiKey}`;
+    axios.get(apiForecastUrl).then(handleForecastResponse);
   }
 
   function handleSubmit(event){
@@ -40,7 +51,7 @@ function Weather(){
     setCity(event.target.value);
   }
 
-  if( weather.ready ) {
+  if( weather.ready && forecast.ready ) {
     return(
       <div className="Weather">
         <form onSubmit={handleSubmit}>
@@ -51,7 +62,7 @@ function Weather(){
                  onChange={handleCityChange} />
         </form>
         <WeatherInfo data={weather} />
-        <Forecast city={weather.city}/>
+        <Forecast data={forecast.list} />
       </div>
     );
   } else {
