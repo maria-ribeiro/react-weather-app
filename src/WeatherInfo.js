@@ -1,5 +1,6 @@
 import React from "react";
-import FormattedDate from "./FormattedDate"
+import WeatherIcon from "./WeatherIcon";
+import FormattedDate from "./FormattedDate";
 import InfoCard from "./InfoCard";
 
 export default function WeatherInfo(props){
@@ -7,7 +8,7 @@ export default function WeatherInfo(props){
     <div className="WeatherInfo">
       <div className="row align-items-center outter-row">
         <div className="col-6 weather-main">
-          <i className="far fa-snowflake"></i>
+          <WeatherIcon id={props.data.icon}/>
           <h1>
             <strong>
             {props.data.temperature}
