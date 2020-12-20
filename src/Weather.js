@@ -4,11 +4,10 @@ import WeatherInfo from "./WeatherInfo";
 import Forecast from "./Forecast";
 import "./Weather.css";
 
-function Weather(props){
+function Weather(){
   const [weather, setWeather] = useState({ready: false});
-  const [city, setCity] = useState(props.defaultCity);
+  const [city, setCity] = useState("");
   function handleResponse(response){
-    console.log(response.data);
     setWeather({
       temperature: Math.round(response.data.main.temp),
       description: response.data.weather[0].description,
@@ -52,12 +51,21 @@ function Weather(props){
                  onChange={handleCityChange} />
         </form>
         <WeatherInfo data={weather} />
-        <Forecast />
+        <Forecast city={weather.city}/>
       </div>
     );
   } else {
-    search();
-    return "Loading . . ."
+    return(
+      <div className="Weather">
+        <form onSubmit={handleSubmit}>
+          <input className="form-control mr-sm-2"
+                 type="search"
+                 placeholder="Search"
+                 autoFocus="on"
+                 onChange={handleCityChange} />
+        </form>
+      </div>
+    );
   }
 }
 

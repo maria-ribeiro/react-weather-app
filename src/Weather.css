@@ -24,6 +24,10 @@
   width: 100%;
 }
 
+.Weather .WeatherInfo .row {
+  margin: 0;
+}
+
 .Weather .WeatherInfo .weather-main {
   text-align: center;
 }
@@ -37,7 +41,7 @@
 }
 
 .Weather .WeatherInfo .description {
-  padding: 30px;
+  padding: 30px 30px 20px;
   /*color: #a84704;*/
 }
 
@@ -52,9 +56,4 @@
   line-height: 1;
   top: -8px;
   margin-left: 5px;
-}
-
-.Weather .Forecast {
-  width: 100%;
-  height: 180px;
 }
