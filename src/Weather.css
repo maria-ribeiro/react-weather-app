@@ -28,12 +28,7 @@
   text-align: center;
 }
 
-.Weather .WeatherInfo .weather-main .fa-snowflake {
-  font-size: 80px;
-  margin-bottom: 20px;
-}
-
-.Weather .WeatherInfo .weather-main .unit {
+.Weather .WeatherInfo .WeatherTemperature .unit {
   font-size: 20px;
   position: relative;
   line-height: 1;
@@ -43,7 +38,7 @@
 
 .Weather .WeatherInfo .description {
   padding: 30px;
-  color: #a84704;
+  /*color: #a84704;*/
 }
 
 .Weather .WeatherInfo .description ul {
