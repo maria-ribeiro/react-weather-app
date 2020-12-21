@@ -1,22 +1,22 @@
-import React, { useState } from "react";
+import React from "react";
 
 export default function WeatherTemperature(props) {
-  const [unit, setUnit] = useState("metric");
+
   function showFarenheit(event){
     event.preventDefault();
-    setUnit("imperial");
+    props.parentCallback("imperial");
   }
 
   function showCelsius(event){
     event.preventDefault();
-    setUnit("metric");
+    props.parentCallback("metric");
   }
 
   function fahrenheit() {
     return Math.round(props.temp * (9/5) + 32);
   }
 
-  if (unit === "metric") {
+  if (props.unit === "metric") {
     return(
       <div className="WeatherTemperature">
         <h1>

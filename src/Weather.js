@@ -8,6 +8,11 @@ function Weather(){
   const [weather, setWeather] = useState({ready: false});
   const [forecast, setForecast] = useState({ready: false});
   const [city, setCity] = useState("");
+  const [unit, setUnit] = useState("metric");
+
+  function callback(childUnit) {
+    setUnit(childUnit);
+  }
 
   function handleResponse(response){
     setWeather({
@@ -61,8 +66,8 @@ function Weather(){
                  autoFocus="on"
                  onChange={handleCityChange} />
         </form>
-        <WeatherInfo data={weather} />
-        <Forecast data={forecast.list} />
+        <WeatherInfo data={weather} unit={unit} parentCallback={callback} />
+        <Forecast data={forecast.list} unit={unit} />
       </div>
     );
   } else {

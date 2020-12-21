@@ -6,7 +6,7 @@ export default function Forecast(props){
   return(
     <div className="Forecast">
         { props.data.map( function(forecastItem) {
-            return <ForecastCard data={forecastItem} />
+            return <ForecastCard data={forecastItem} unit={props.unit} />
           })
         }
     </div>

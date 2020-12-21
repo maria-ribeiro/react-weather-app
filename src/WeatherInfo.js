@@ -5,12 +5,22 @@ import FormattedDate from "./FormattedDate";
 import InfoCard from "./InfoCard";
 
 export default function WeatherInfo(props){
+  let degree, maximum, minimum;
+  if (props.unit === "metric") {
+    degree = "°C";
+    maximum = props.data.maximum;
+    minimum = props.data.minimum;
+  } else {
+    degree = "°F";
+    maximum = Math.round(props.data.maximum * (9/5) + 32);
+    minimum = Math.round(props.data.minimum * (9/5) + 32);
+  }
   return(
     <div className="WeatherInfo">
       <div className="row align-items-center outter-row">
         <div className="col-6 weather-main">
           <WeatherIcon id={props.data.icon} size={120} />
-          <WeatherTemperature temp={props.data.temperature}/>
+          <WeatherTemperature temp={props.data.temperature} parentCallback={props.parentCallback} unit={props.unit} />
           <p className="text-capitalize">{props.data.description}</p>
         </div>
         <div className="col-6 description light-background">
@@ -19,7 +29,7 @@ export default function WeatherInfo(props){
 
           <div className="row justify-content-around">
             <div className="col col-lg-3">
-              <InfoCard value={props.data.maximum} unit="°C" name="maximum"/>
+              <InfoCard value={maximum} unit={degree} name="maximum"/>
             </div>
             <div className="col col-lg-3">
               <InfoCard value={Math.round(props.data.wind * 3.6)} unit="km/h" name="wind"/>
@@ -30,7 +40,7 @@ export default function WeatherInfo(props){
             </div>
             <div class="w-100"></div>
             <div className="col col-lg-3">
-              <InfoCard value={props.data.minimum} unit="°C" name="minimum"/>
+              <InfoCard value={minimum} unit={degree} name="minimum"/>
             </div>
             <div className="col col-lg-3">
               <InfoCard value={props.data.humidity} unit="%" name="humidity"/>      
