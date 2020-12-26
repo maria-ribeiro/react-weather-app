@@ -1,12 +1,19 @@
+.App .container {
+  width: 80vw;
+  margin: 20px 0px;
+}
+
 .App footer {
-  font-size: 42px;
+  font-size: 32px;
   text-align: center;
 }
 
 .App footer .fa-github {
-  color: white;
+  color: #000000;
+  opacity: 0.6;
+  transition: all 200ms ease-in-out;
 }
 
-.App .container {
-  width: 80vw;
+.App footer .fa-github:hover {
+  opacity: 1;
 }

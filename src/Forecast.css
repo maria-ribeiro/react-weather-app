@@ -2,11 +2,16 @@
   display: flex;
   overflow-x: scroll;
   width: 100%;
+  margin: 10px 0px;
 }
 
 .Forecast .ForecastCard {
   text-align: center;
   margin: 6px;
+}
+
+.Forecast .ForecastCard canvas {
+  margin-top: 5px;
 }
 
 .Forecast::-webkit-scrollbar-track {
@@ -19,6 +24,6 @@
 }
 
 .Forecast::-webkit-scrollbar-thumb {
-  background-color: rgba(255, 255, 255, 0.8);
+  background-color: rgba(255, 255, 255, 0.7);
   border-radius: 10px;
 }

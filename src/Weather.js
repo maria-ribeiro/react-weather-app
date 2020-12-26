@@ -4,10 +4,10 @@ import WeatherInfo from "./WeatherInfo";
 import Forecast from "./Forecast";
 import "./Weather.css";
 
-function Weather(){
+function Weather(props){
   const [weather, setWeather] = useState({ready: false});
   const [forecast, setForecast] = useState({ready: false});
-  const [city, setCity] = useState("");
+  const [city, setCity] = useState(props.defaultCity);
   const [unit, setUnit] = useState("metric");
 
   function callback(childUnit) {
@@ -60,7 +60,7 @@ function Weather(){
     return(
       <div className="Weather">
         <form onSubmit={handleSubmit}>
-          <input className="form-control mr-sm-2"
+          <input className="form-control shadow-none mr-sm-2"
                  type="search"
                  placeholder="Search"
                  autoFocus="on"
@@ -71,16 +71,9 @@ function Weather(){
       </div>
     );
   } else {
+    search();
     return(
-      <div className="Weather">
-        <form onSubmit={handleSubmit}>
-          <input className="form-control mr-sm-2"
-                 type="search"
-                 placeholder="Search"
-                 autoFocus="on"
-                 onChange={handleCityChange} />
-        </form>
-      </div>
+      "Loading . . ."
     );
   }
 }

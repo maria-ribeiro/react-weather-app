@@ -4,8 +4,8 @@
 
 body {
   min-height: 100vh;
-  color: #ffffff;
-  background: #2c90e2;
+  color: #000000;
+  background-image: linear-gradient(-20deg, #e9defa 0%, #fbfcdb 100%);
   display: flex;
   flex-direction: column;
   justify-content: center;
