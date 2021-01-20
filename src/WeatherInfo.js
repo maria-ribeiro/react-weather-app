@@ -38,7 +38,7 @@ export default function WeatherInfo(props){
               <InfoCard value={("0" + props.data.sunrise.getHours()).substr(-2)+":"+("0" + props.data.sunrise.getMinutes()).substr(-2)}
                         name="sunrise"/>
             </div>
-            <div class="w-100"></div>
+            <div className="w-100"></div>
             <div className="col col-lg-3">
               <InfoCard value={minimum} unit={degree} name="minimum"/>
             </div>
